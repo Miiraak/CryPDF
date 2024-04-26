@@ -4,18 +4,16 @@ import PyPDF2
 import os
 import pyperclip
 
-fileNameLabel = ""
 
 def browse_file():
     file_path = filedialog.askopenfilename()
     if file_path:
+        global fileNameTxt
         file_name = os.path.basename(file_path)
         label.config(text=file_name)
         global selected_file_path
         selected_file_path = file_path
-
-    fileNameLabel = file_name
-
+        fileNameTxt = file_name
 
 
 def crack_pdf(file_path, wordlist_path):
@@ -27,11 +25,8 @@ def crack_pdf(file_path, wordlist_path):
     for word in wordlist:
         word = word.strip()
         if pdf_reader.decrypt(word):
-            print(f"Password find : {word}")
             show_password_window(word)
             return True
-
-    print("Password not find.")
     return False
 
 
@@ -46,7 +41,7 @@ def show_password_window(password):
     password_window = tk.Toplevel(root)
     password_window.title("Done !")
     password_window.geometry("250x100")
-    password_label = tk.Label(password_window, text=f"Password is :" + fileNameLabel)
+    password_label = tk.Label(password_window, text=f"Password for : {fileNameTxt}")
     password_label.pack(pady=5)
     password_display = tk.Label(password_window, text=password, width=20, relief="sunken")
     password_display.pack(pady=5)
@@ -81,9 +76,9 @@ labelTitre.place(x=10, y=5)
 wordlist_path = os.path.abspath("french_passwords_top20000.txt")
 
 # Créer un bouton pour valider le crack manuellement
-validate_button = tk.Button(root, text="Brut-Force", command=validate_crack)
+validate_button = tk.Button(root, text="Attack", command=validate_crack)
 validate_button.pack(pady=10)
-validate_button.place(x=130, y=60)
+validate_button.place(x=160, y=60)
 
 # Lancer la boucle principale
 root.mainloop()
