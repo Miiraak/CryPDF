@@ -11,6 +11,8 @@ Puis changez dans "main.py" la ligne 77.
 "french_passwords_top20000.txt" par le nom de votre fichier .txt
 
 Il vous suffira ensuite de relancer le programme.
+
+### _Je ne saurais être tenu responsable de vos exactions les gus_
 ______________________
 
 ## Thanks to :
