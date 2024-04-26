@@ -48,6 +48,7 @@ def browse_dictionary_file():
         labelChoiceDict.delete(0, tk.END)
         labelChoiceDict.insert(0, file_nameD)
 
+
 def validate_crack():
     if selected_pdf_path:
         if selected_wordlist_path:
@@ -57,8 +58,10 @@ def validate_crack():
     else:
         print("Please select a PDF file.")
 
+
 def copy_to_clipboard(password):
     pyperclip.copy(password)
+
 
 def show_password_window(password):
     password_window = Toplevel(root)
