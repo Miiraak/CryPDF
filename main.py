@@ -4,6 +4,7 @@ import PyPDF2
 import os
 import pyperclip
 
+fileNameLabel = ""
 
 def browse_file():
     file_path = filedialog.askopenfilename()
@@ -12,6 +13,9 @@ def browse_file():
         label.config(text=file_name)
         global selected_file_path
         selected_file_path = file_path
+
+    fileNameLabel = file_name
+
 
 
 def crack_pdf(file_path, wordlist_path):
@@ -40,9 +44,9 @@ def validate_crack():
 
 def show_password_window(password):
     password_window = tk.Toplevel(root)
-    password_window.title("Password")
+    password_window.title("Done !")
     password_window.geometry("250x100")
-    password_label = tk.Label(password_window, text="Password find :")
+    password_label = tk.Label(password_window, text=f"Password is :" + fileNameLabel)
     password_label.pack(pady=5)
     password_display = tk.Label(password_window, text=password, width=20, relief="sunken")
     password_display.pack(pady=5)
