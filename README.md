@@ -8,7 +8,8 @@ ________________________
 ### _Je ne saurais être tenu responsable de vos exactions les gus_
 ______________________
 
-## Thanks to :
+## <3 Thanks to :
 
 Dictionnaire :
 [Richelieu - Tarraschk](https://github.com/tarraschk/richelieu) (This project is licensed under the CC BY 4.0 license.)
+[CrackStation's Password Cracking Dictionary](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm)
