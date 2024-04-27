@@ -6,6 +6,7 @@ Se compose d'un petit GUI, sélectionnez votre fichier pdf puis tester le brutfo
 Si le mot de passe se trouve dans le dictionnaire il vous l'affichera dans un prompt à part. muni d'un bouton "Copier".
 ________________________
 ### _Je ne saurais être tenu responsable de vos exactions les gus_
+Utilisez le sur vos pdf ou ceux dont vous avez l'autorisation de l'auteur du dit pdf
 ______________________
 
 ## :sparkling_heart: Thanks to :
