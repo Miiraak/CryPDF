@@ -8,7 +8,7 @@ ________________________
 ### _Je ne saurais être tenu responsable de vos exactions les gus_
 ______________________
 
-## <3 Thanks to :
+## :sparkling_heart: Thanks to :
 
 Dictionnaire :
 [Richelieu - Tarraschk](https://github.com/tarraschk/richelieu) (This project is licensed under the CC BY 4.0 license.)
