@@ -1,9 +1,10 @@
 import tkinter as tk
-import pypdf
+from tkinter import Toplevel
 from tkinter import filedialog
+import pypdf
 import os
 import pyperclip
-from tkinter import Toplevel
+
 
 
 def crack_pdf(file_path, wordlist_path):
@@ -16,7 +17,6 @@ def crack_pdf(file_path, wordlist_path):
         word = word.strip()
         try:
             if pdf_reader.decrypt(word):
-                print(f"Password found: {word}")
                 show_password_window(word)
                 return True
         except NotImplementedError:
@@ -28,7 +28,7 @@ def crack_pdf(file_path, wordlist_path):
 
 def browse_pdf_file():
     global selected_pdf_path
-    selected_pdf_path = filedialog.askopenfilename()
+    selected_pdf_path = filedialog.askopenfilename(filetypes=[("PDF File", "*.pdf")])
     global pdfName
 
     if selected_pdf_path:
@@ -42,7 +42,7 @@ def browse_pdf_file():
 
 def browse_dictionary_file():
     global selected_wordlist_path
-    selected_wordlist_path = filedialog.askopenfilename()
+    selected_wordlist_path = filedialog.askopenfilename(filetypes=[("Text file", "*.txt"), ("All file", "*.*")])
     if selected_wordlist_path:
         file_nameD = os.path.basename(selected_wordlist_path)
         labelChoiceDict.delete(0, tk.END)
