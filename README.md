@@ -24,6 +24,6 @@ ______________________
 
 Dictionnaire :
 
-[Richelieu - Tarraschk](https://github.com/tarraschk/richelieu) (CC BY 4.0 license.)
+[Richelieu - Tarraschk](https://github.com/tarraschk/richelieu) - [(CC BY 4.0 license.)](https://creativecommons.org/licenses/by/4.0/)
 
-[CrackStation's Password Cracking Dictionary](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm) ( CC BY SA 3.0 license.)
+[CrackStation's Password Cracking Dictionary](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm) - [( CC BY SA 3.0 license.)](https://creativecommons.org/licenses/by-sa/3.0/deed.en)
