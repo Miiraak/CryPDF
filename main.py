@@ -6,7 +6,6 @@ import os
 import pyperclip
 
 
-
 def crack_pdf(file_path, wordlist_path):
     with open(wordlist_path, 'r', encoding="utf-8") as f:
         wordlist = f.readlines()
