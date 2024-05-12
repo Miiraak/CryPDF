@@ -34,14 +34,13 @@ def browse_pdf_file():
         file_nameP = os.path.basename(selected_pdf_path)
         labelChoiceFile.delete(0, tk.END)
         labelChoiceFile.insert(0, file_nameP)
-        global selected_wordlist_path
-        selected_wordlist_path = ""
         pdfName = file_nameP
 
 
 def browse_dictionary_file():
     global selected_wordlist_path
     selected_wordlist_path = filedialog.askopenfilename(filetypes=[("Text file", "*.txt"), ("All file", "*.*")])
+
     if selected_wordlist_path:
         file_nameD = os.path.basename(selected_wordlist_path)
         labelChoiceDict.delete(0, tk.END)
@@ -49,13 +48,10 @@ def browse_dictionary_file():
 
 
 def validate_crack():
-    if selected_pdf_path:
-        if selected_wordlist_path:
-            crack_pdf(selected_pdf_path, selected_wordlist_path)
-        else:
-            print("Please select a dictionary file.")
+    if selected_pdf_path and selected_pdf_path:
+        crack_pdf(selected_pdf_path, selected_wordlist_path)
     else:
-        print("Please select a PDF file.")
+        print("Verify PDF or Dictionary.")
 
 
 def copy_to_clipboard(password):
