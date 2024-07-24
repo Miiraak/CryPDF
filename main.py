@@ -1,3 +1,4 @@
+from re import split
 import tkinter as tk
 from tkinter import Toplevel
 from tkinter import filedialog
@@ -6,6 +7,16 @@ import os
 import pyperclip
 import threading
 import math
+
+def crack_pdf_threaded(file_path, wordlist_var):
+    NThread = ThreadingCalculator(wordlist_var)
+    split_words = split_list(wordlist_var, NThread)
+
+    threads = []
+    for i in range(NThread):
+        thread = threading.Thread(target=crack_pdf, args=(file_path, split_words[i]))
+        threads.append(thread)
+        thread.start()
 
 
 def crack_pdf(file_path, wordlist_var):
@@ -25,17 +36,15 @@ def crack_pdf(file_path, wordlist_var):
                 return True
         except NotImplementedError:
             continue
-
-    show_passwordNF_window()
     return False
 
 
-def ThreadingCalculator(dictionnary):
+def ThreadingCalculator(dictionnaryLen):
     factor = 1000
     min_thread = 1
-    max_thread = 8
+    max_thread = 10
     
-    return max(max_thread, min(min_thread, math.ceil(len(dictionnary) / factor)))
+    return max(max_thread, min(min_thread, math.ceil(len(dictionnaryLen) / factor)))
 
 
 def split_list(dictionnary, num_threads):
@@ -45,6 +54,7 @@ def split_list(dictionnary, num_threads):
 
 def browse_pdf_file():
     global selected_pdf_path
+    selected_pdf_path = ""
     selected_pdf_path = filedialog.askopenfilename(filetypes=[("PDF File", "*.pdf")])
     global pdfName
 
@@ -57,6 +67,7 @@ def browse_pdf_file():
 
 def browse_dictionary_file():
     global selected_wordlist_path
+    selected_wordlist_path = ""
     selected_wordlist_path = filedialog.askopenfilename(filetypes=[("Text file", "*.txt"), ("All file", "*.*")])
 
     if selected_wordlist_path:
@@ -69,9 +80,10 @@ def browse_dictionary_file():
 
 def validate_crack():
     if labelChoiceFile.get() != "" and labelChoiceDict.get() != "":
+        # crack_pdf_threaded dont work with choosen dictionary so we need to use crack_pdf for now
         crack_pdf(selected_pdf_path, selected_wordlist_path)
     elif labelChoiceFile.get() != "" and labelChoiceDict.get() == "":
-        crack_pdf(selected_pdf_path, integratedPasswords)
+        crack_pdf_threaded(selected_pdf_path, integratedPasswords)
     else:
         print("Verify the PDF file.")
 
@@ -92,15 +104,6 @@ def show_password_window(password):
     password_display.pack(pady=5)
     copy_button = tk.Button(password_window, text="Copy", command=lambda: copy_to_clipboard(password))
     copy_button.pack(pady=5)
-    
-
-def show_passwordNF_window():
-    passwordNF_window = Toplevel(root)
-    passwordNF_window.title("Awww...")
-    passwordNF_window.geometry("250x40")
-    passwordNF_window.resizable(height=False, width=False)
-    passwordNF_label = tk.Label(passwordNF_window, text=f"Password not found for : {pdfName}")
-    passwordNF_label.pack(pady=5)
 
 
 root = tk.Tk()
