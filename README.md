@@ -61,6 +61,9 @@ Bien que ce soit "gentillet", cela reste illégal de forcer des PDF ne vous appa
 
 ---
 
+## License :
+Ce logiciel est fourni sous license [MIT](https://github.com/Miiraak/CryPDF/blob/master/LICENSE)
+
 ## :sparkling_heart: Merci à :
 
 Dictionnaires :
