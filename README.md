@@ -1,73 +1,74 @@
 # CryPDF: 
-Attaque par Dictionnaire sur PDF Verrouillés
+Dictionary Attack on Locked PDFs
 
 ---
 
-**CryPDF** est un outil simple mais puissant conçu pour aider à déverrouiller les fichiers PDF protégés par mot de passe en utilisant une attaque par dictionnaire. Grâce à son interface graphique conviviale, vous pouvez rapidement tester des mots de passe à partir d'un dictionnaire prédéfini ou personnalisé.
+**CryPDF** is a simple yet powerful tool designed to help unlock password-protected PDF files using a dictionary attack. With its user-friendly graphical interface, you can quickly test passwords from a predefined or custom dictionary.
 
-![Capture d'écran de l'interface](https://github.com/Miiraak/CryPDF/blob/master/Images/img.png)
+![Screenshot of the interface](https://github.com/Miiraak/CryPDF/blob/master/Images/img.png)
 
-## Fonctionnalités
+## Features
 
-- **Interface Graphique Simple** : Choisissez facilement vos fichiers PDF et dictionnaires via une interface intuitive.
-- **Attaque par Dictionnaire** : Testez des mots de passe à partir de fichiers dictionnaires pour déverrouiller vos PDFs.
-- **Support Multithreading** : Utilisation de plusieurs threads pour accélérer l'attaque par dictionnaire.
-- **Fenêtre de Résultat** : Affiche le mot de passe trouvé dans une fenêtre séparée avec une option de copie en un clic.
+- **Simple Graphical Interface**: Easily select your PDF files and dictionaries via an intuitive interface.
+- **Dictionary Attack**: Test passwords from dictionary files to unlock your PDFs.
+- **Multithreading Support**: Use multiple threads to speed up the dictionary attack.
+- **Result Window**: Displays the found password in a separate window with a one-click copy option.
 
-![Capture d'écran du résultat](https://github.com/Miiraak/CryPDF/blob/master/Images/imgDone.png)
+![Screenshot of the result window](https://github.com/Miiraak/CryPDF/blob/master/Images/imgDone.png)
 
 ## Installation
 
-Pour utiliser CryPDF, assurez-vous d'avoir Python installé sur votre système. <br>
-Clonez le dépôt et installez les dépendances nécessaires :
+To use CryPDF, ensure Python is installed on your system.  
+Clone the repository and install the required dependencies:
 
 ```bash
-  git clone https://github.com/Miiraak/CryPDF.git
-  cd CryPDF
-  pip install -r requirements.txt
+git clone https://github.com/Miiraak/CryPDF.git
+cd CryPDF
+pip install -r requirements.txt
 ```
-ou 
+or
 
-Téléchargez l'executable sous [Releases](https://github.com/Miiraak/CryPDF/releases)
+Download the executable from [Releases](https://github.com/Miiraak/CryPDF/releases)
 
-## Utilisation
-#### Lancer l'Application :
-Exécutez le script principal pour ouvrir l'interface graphique. <br>
+## Usage
+#### Run the Application:
+Execute the main script to open the graphical interface. <br>
 ```bash
 python crypdf.py
 ```
-ou 
+or
 ```
-Lancez l'executable.
+Run the executable.
 ```
 
-#### Choisir un PDF :
-Cliquez sur le bouton PDF pour sélectionner le fichier PDF que vous souhaitez déverrouiller. (requis)
+#### Choose a PDF:
+Click the PDF button to select the PDF file you want to unlock. (required)
 
-#### Choisir un Dictionnaire :
-Cliquez sur le bouton Dictionary pour sélectionner le fichier contenant les mots de passe à tester. (optionnel)
+#### Choose a Dictionary:
+Click the Dictionary button to select the file containing the passwords to test. (optional)
 
-#### Lancer l'Attaque :
-Cliquez sur le bouton Attack pour commencer l'attaque par dictionnaire. Si le mot de passe est trouvé, il sera affiché dans une nouvelle fenêtre avec l'option de copie.
+#### Start the Attack:
+Click the Attack button to start the dictionary attack. If the password is found, it will be displayed in a new window with the option to copy.
 
-## Contribuer :
-Les contributions sont les bienvenues ! Pour proposer des améliorations ou signaler des bugs, veuillez ouvrir une issue ou soumettre une pull request sur le dépôt GitHub.
+## Contribute:
+Contributions are welcome! To propose improvements or report bugs, please open an issue or submit a pull request on the GitHub repository.
 
 ---
 
-# Avertissement 
-Bien que ce soit "gentillet", cela reste illégal de forcer des PDF ne vous appartenant pas !
-### _Je ne saurais être tenu responsable de vos exactions les gus_
+# Disclaimer
+Although it's "harmless," forcing PDFs that don't belong to you is still illegal!
+### _I cannot be held responsible for your actions, guys_
 
 ---
 
-## License :
-Ce logiciel est fourni sous license [MIT](https://github.com/Miiraak/CryPDF/blob/master/LICENSE)
+## License:
+This software is provided under the [MIT](https://github.com/Miiraak/CryPDF/blob/master/LICENSE) license.
 
-## :sparkling_heart: Merci à :
+## :sparkling_heart: Thanks to:
 
-Dictionnaires :
+Dictionaries:
 
 - [Richelieu - Tarraschk](https://github.com/tarraschk/richelieu) - [(CC BY 4.0 license)](https://creativecommons.org/licenses/by/4.0/)
 - [CrackStation's Password Cracking Dictionary](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm) - [(CC BY SA 3.0 license)](https://creativecommons.org/licenses/by-sa/3.0/deed.en)
 - [SecLists](https://github.com/danielmiessler/SecLists/tree/master/Passwords) - [(MIT License)](https://github.com/danielmiessler/SecLists/blob/master/LICENSE)
+
